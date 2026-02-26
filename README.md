@@ -162,7 +162,7 @@ For advanced options and components, see the [`dita-bootstrap` plugin documentat
 
 ---
 
-## ✏️ Authoring in a Codespace with DitaCraft
+## ✏️ Authoring in a Codespace with DitaCraft (*Optional*)
 
 You can edit your DITA content directly in the browser — no local installation required — using [GitHub Codespaces](https://github.com/features/codespaces) and the [DitaCraft](https://marketplace.visualstudio.com/items?itemName=JeremyJeanne.ditacraft) VS Code extension.
 

@@ -147,8 +147,74 @@ For advanced options and components, see the [`dita-bootstrap` plugin documentat
 - Build fails with missing files
   - Ensure `dita/document.ditamap` exists and references are correct.
 
+ Here's the updated README with a new section appended at the end:
+
+---
+
+## 🛟 Troubleshooting
+- No site/404 on Pages
+  - Confirm Settings → Pages is set to `gh-pages / root`.
+  - Check that the CI run completed successfully and pushed to gh-pages.
+- Workflow cannot push
+ -Verify Read and write permissions for GITHUB_TOKEN (see above).
+- Build fails with missing files
+  - Ensure `dita/document.ditamap` exists and references are correct.
+
 ## 🙌 Credits
 
 Thanks to the following DITA-OT experts and maintainers:
 - Jason Fox
 - Roger Sheen
+
+---
+
+## ✏️ Authoring in a Codespace with DitaCraft
+
+You can edit your DITA content directly in the browser — no local installation required — using [GitHub Codespaces](https://github.com/features/codespaces) and the [DitaCraft](https://marketplace.visualstudio.com/items?itemName=JeremyJeanne.ditacraft) VS Code extension.
+
+DitaCraft provides syntax highlighting for `.dita`, `.ditamap`, and `.bookmap` files, real-time DTD validation, smart Ctrl+Click navigation between topic references, and 21 DITA-specific code snippets.
+
+> ⚠️ **Note:** DitaCraft uses the DITA-OT for its local HTML5 preview feature. This is separate from the CI workflow, which publishes Bootstrap HTML and PDF using DITA-OT GitHub Actions. The two pipelines are independent.
+
+### 🔧 Setup
+
+This template includes a `.devcontainer` configuration that automatically installs DitaCraft and DITA-OT when you open a Codespace.
+
+1. On the repository page, click the green **Code** button → **Codespaces** tab → **Create codespace on main**
+2. GitHub builds the container (**takes a few minutes the first time**; faster on subsequent launches)
+3. VS Code opens in your browser with DitaCraft active
+
+### ✍️ Authoring workflow
+
+Once the Codespace is running:
+
+- Open any file under `dita/` — syntax highlighting and real-time validation activate automatically
+- Use `Ctrl+Shift+P` → **DITA: Create New Topic** to create a concept, task, or reference from a template
+- Use `Ctrl+Click` on any `href`, `conref`, or `keyref` value to navigate between files
+- Use `Ctrl+Shift+V` to manually validate the current file against DITA 1.3 DTDs
+- Use `Ctrl+Shift+H` for a local HTML5 preview (via DITA-OT, rendered in a side panel)
+
+When you're ready to publish, commit and push your changes. The CI workflow triggers automatically and builds the Bootstrap HTML site and PDF artifact.
+
+### ⚙️ Configuration
+
+DitaCraft settings are pre-configured for this template in `.vscode/settings.json`:
+
+```json
+{
+  "ditacraft.ditaOtPath": "/opt/dita-ot",
+  "ditacraft.defaultTranstype": "html5",
+  "ditacraft.outputDirectory": "${workspaceFolder}/out",
+  "ditacraft.autoValidate": true,
+  "ditacraft.previewAutoRefresh": true
+}
+```
+
+Local preview output goes to `out/`, which is excluded from version control via `.gitignore`.
+
+## 🙌 Credits
+
+Thanks to the following DITA-OT experts and maintainers:
+- Jason Fox
+- Roger Sheen
+- Your uncle Claude by Anthropic.

@@ -190,21 +190,6 @@ Once the Codespace is running:
 
 When you're ready to publish, commit and push your changes. The CI workflow triggers automatically and builds the Bootstrap HTML site and PDF artifact.
 
-### ⚙️ Configuration
-
-DitaCraft settings are pre-configured for this template in `.vscode/settings.json`:
-
-```json
-{
-  "ditacraft.ditaOtPath": "/opt/dita-ot",
-  "ditacraft.defaultTranstype": "html5",
-  "ditacraft.outputDirectory": "${workspaceFolder}/out",
-  "ditacraft.autoValidate": true,
-  "ditacraft.previewAutoRefresh": true
-}
-```
-
-Local preview output goes to `out/`, which is excluded from version control via `.gitignore`.
 
 ## 🙌 Credits
 

@@ -160,12 +160,6 @@ For advanced options and components, see the [`dita-bootstrap` plugin documentat
 - Build fails with missing files
   - Ensure `dita/document.ditamap` exists and references are correct.
 
-## 🙌 Credits
-
-Thanks to the following DITA-OT experts and maintainers:
-- Jason Fox
-- Roger Sheen
-
 ---
 
 ## ✏️ Authoring in a Codespace with DitaCraft

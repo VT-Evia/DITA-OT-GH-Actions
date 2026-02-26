@@ -1,4 +1,4 @@
-﻿# 📘 CPTSC 2025 Structured Authoring Workshop Template
+﻿# 📘 DITA-OT Bootstrap HTML and PDF Template
 
 Template repository for publishing **Bootstrap-themed HTML** and **PDF** outputs using [DITA-OT build GitHub Action](https://github.com/dita-ot/dita-ot-action). Use this guide to upload a DITA project to a GitHub repository and, via DITA-OT GitHub Actions, access website and pdf deliverables. Edits to DITA files committed to the repository will invoke the DITA-OT automatically in a process of continuous integration and development to build and serve website and pdf deliverables.
 

@@ -48,9 +48,9 @@ jobs:
             fox.jason.extend.css
             fox.jason.prismjs
           build: |
-              dita -i dita/document.ditamap -o out/pdf -f pdf --theme=.github/themes/theme.yaml --org.dita.index.skip="yes" --args.fo.userconfig=.github/dita-ot/fop.xconf
+              dita -i dita/document.ditamap -o out/pdf -f pdf --theme=.github/themes/theme.yaml --org.dita.index.skip="yes" --args.fo.userconfig="$(pwd)/.github/dita-ot/fop.xconf"
          # If you have a DITAVal, replace the previous line with the following:
-            # dita -i dita/document.ditamap -o out/pdf -f pdf --theme=.github/themes/theme.yaml --org.dita.index.skip="yes" --filter=myfilter.ditaval --args.fo.userconfig=.github/dita-ot/fop.xconf
+            # dita -i dita/document.ditamap -o out/pdf -f pdf --theme=.github/themes/theme.yaml --org.dita.index.skip="yes" --filter=myfilter.ditaval --args.fo.userconfig="$(pwd)/.github/dita-ot/fop.xconf"
       - name: Upload PDF 📚
         uses: actions/upload-artifact@v4
         with:

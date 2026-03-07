@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Apache FOP configuration for PDF/UA (accessible PDF) output.
+     The <accessibility> element instructs FOP to produce a tagged PDF
+     with proper structure, enabling compliance with PDF/UA (ISO 14289-1). -->
+<fop version="1.0">
+  <accessibility>true</accessibility>
+</fop>

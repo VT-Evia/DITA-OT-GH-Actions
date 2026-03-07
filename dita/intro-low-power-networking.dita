@@ -24,7 +24,9 @@
    control.</p>
   <fig id="fig-ul4-rdq-3r">
    <title>Wireless lighting passing information across light bulbs</title>
-   <image href="images/mesh-lighting-network.png" id="figure-bulbs-passing-signal"/>
+   <image href="images/mesh-lighting-network.png" id="figure-bulbs-passing-signal">
+   <alt>Diagram showing a low power electrical network through a fictional house.</alt>
+   </image>
   </fig>
   <p>Because wireless devices on a low-power network have built-in antennas for radio communication
    with other connected devices, they may be prone to the same reception problems that you might

@@ -14,8 +14,11 @@
   <refbody>
     <section>
       <fig id="fig-qjp-1vx-3r">
-        <title>Front and back of remote control<image href="images/remote-control-callouts.png"
-            id="image-svq-2vx-3r"/></title>
+        <title>Front and back of remote control</title>
+        <image href="images/remote-control-callouts.png"
+            id="image-svq-2vx-3r">
+            <alt>Picture of a remote control, front and back, with callout numbers to explain its parts.</alt>
+            </image>
       </fig>
     </section>
     <properties id="properties-ygc-svx-3r">

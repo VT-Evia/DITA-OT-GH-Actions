@@ -175,7 +175,7 @@ When you're ready to publish, commit and push your changes. The CI workflow trig
 
 ### ⚙️ Configuration
 
-DitaCraft reads settings from `.vscode/settings.json` in your workspace. This file is not included in the template, so you can create it manually if you want to customise DitaCraft's behaviour. A typical configuration looks like this:
+DitaCraft reads settings from `.vscode/settings.json` in your workspace. This file is not included in the template, so you can create it manually if you want to customize DitaCraft's behavior. A typical configuration looks like this:
 
 ```json
 {

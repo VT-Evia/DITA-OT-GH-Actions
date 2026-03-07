@@ -90,6 +90,7 @@ style:
   
   cover:
     background-image: logo.jpg
+    background-image-alt: ""
     background-repeat: no-repeat
     height: 25.7cm
   cover-title:

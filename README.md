@@ -56,14 +56,19 @@ Put all of your DITA content inside the `dita` directory:
 │  ├─ dita-ot/
 │  │  ├─ header.xml
 │  │  ├─ footer.xml
-│  │  └─ theme.css
+│  │  ├─ theme.css
+│  │  ├─ html.xml
+│  │  ├─ html.ditaval
+│  │  ├─ pdf.xml
+│  │  ├─ pdf.ditaval
+│  │  └─ favicon.svg
 │  └─ themes/
-│     ├─ logo.png
+│     ├─ logo.jpg
 │     └─ theme.yaml
 └─ dita/
    ├─ document.ditamap ← main map (required by the default workflow)
    ├─ index.dita       ← homepage topic for the site
-   ├─ topics/…
+   ├─ *.dita           ← your topic files
    └─ images/…
 ```
 
@@ -170,7 +175,7 @@ When you're ready to publish, commit and push your changes. The CI workflow trig
 
 ### ⚙️ Configuration
 
-DitaCraft settings are pre-configured for this template in `.vscode/settings.json`:
+DitaCraft reads settings from `.vscode/settings.json` in your workspace. This file is not included in the template, so you can create it manually if you want to customise DitaCraft's behaviour. A typical configuration looks like this:
 
 ```json
 {

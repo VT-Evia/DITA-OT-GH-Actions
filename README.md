@@ -161,17 +161,34 @@ This template includes a `.devcontainer` configuration that automatically instal
 2. GitHub builds the container (**takes a few minutes the first time**; faster on subsequent launches)
 3. VS Code opens in your browser with DitaCraft active
 
-### ✍️ Authoring workflow
+### ✍️ Authoring Workflow
 
 Once the Codespace is running:
 
-- Open any file under `dita/` — syntax highlighting and real-time validation activate automatically
-- Use `Ctrl+Shift+P` → **DITA: Create New Topic** to create a concept, task, or reference from a template
-- Use `Ctrl+Click` on any `href`, `conref`, or `keyref` value to navigate between files
-- Use `Ctrl+Shift+V` to manually validate the current file against DITA 1.3 DTDs
-- Use `Ctrl+Shift+H` for a local HTML5 preview (via DITA-OT, rendered in a side panel)
+- Open any file under `dita/` — syntax highlighting and real-time validation activate automatically.
+- Use the Command Palette to create a new DITA topic from a template (concept, task, or reference).
+- Click on any `href`, `conref`, or `keyref` value to navigate between files.
+- Manually validate the current file against DITA 1.3 DTDs using the keyboard shortcut below.
+- Trigger a local HTML5 preview (via DITA-OT, rendered in a side panel) using the keyboard shortcut below.
 
 When you're ready to publish, commit and push your changes. The CI workflow triggers automatically and builds the Bootstrap HTML site and PDF artifact.
+
+### ⌨️ Keyboard Shortcuts
+
+| Action | Mac | Windows / Linux |
+|---|---|---|
+| Open Command Palette | `⌘ Cmd` + `⇧ Shift` + `P` | `Ctrl` + `Shift` + `P` |
+| Create New DITA Topic | `⌘ Cmd` + `⇧ Shift` + `P` → **DITA: Create New Topic** | `Ctrl` + `Shift` + `P` → **DITA: Create New Topic** |
+| Navigate to linked file (`href`, `conref`, `keyref`) | `⌘ Cmd` + `Click` | `Ctrl` + `Click` |
+| Validate current file (DITA 1.3 DTD) | `⌘ Cmd` + `⇧ Shift` + `V` | `Ctrl` + `Shift` + `V` |
+| Local HTML5 preview | `⌘ Cmd` + `⇧ Shift` + `H` | `Ctrl` + `Shift` + `H` |
+| Save file | `⌘ Cmd` + `S` | `Ctrl` + `S` |
+| Find in file | `⌘ Cmd` + `F` | `Ctrl` + `F` |
+| Find across all files | `⌘ Cmd` + `⇧ Shift` + `F` | `Ctrl` + `Shift` + `F` |
+| Toggle sidebar | `⌘ Cmd` + `B` | `Ctrl` + `B` |
+| Split editor | `⌘ Cmd` + `\` | `Ctrl` + `\` |
+
+> 💡 **Tip for Mac users:** In GitHub Codespaces running in the browser, some `⌘ Cmd` shortcuts may be intercepted by your operating system or browser. If a shortcut doesn't work, try accessing the same command via the Command Palette (`⌘ Cmd` + `⇧ Shift` + `P`).
 
 ### ⚙️ Configuration
 

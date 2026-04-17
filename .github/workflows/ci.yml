@@ -17,9 +17,8 @@ jobs:
           install: |
             apt-get update -q
             export DEBIAN_FRONTEND=noninteractive
-            apt-get install -qy --no-install-recommends nodejs python3
+            apt-get install -qy --no-install-recommends nodejs
             nodejs -v
-            dita install https://github.com/VT-Evia/mdita-yaml-keys/archive/561edd183c5f78896ea4ffe5b3bf844bcd824caf.zip
           plugins: |
             fox.jason.extend.css
             net.infotexture.dita-bootstrap
@@ -43,9 +42,8 @@ jobs:
           install: |
             apt-get update -q
             export DEBIAN_FRONTEND=noninteractive
-            apt-get install -qy --no-install-recommends nodejs python3
+            apt-get install -qy --no-install-recommends nodejs
             nodejs -v
-            dita install https://github.com/VT-Evia/mdita-yaml-keys/archive/561edd183c5f78896ea4ffe5b3bf844bcd824caf.zip
           plugins: |
             fox.jason.extend.css
             fox.jason.prismjs

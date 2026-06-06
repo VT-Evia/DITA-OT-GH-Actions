@@ -1,6 +1,6 @@
 # DITA-OT Markdown Template
 
-Template repository for publishing **Markdown** output from DITA content using the [DITA-OT GitHub Action](https://github.com/dita-ot/dita-ot-action). Every push to the repository automatically runs DITA-OT and produces a downloadable Markdown artifact — no local toolchain required. And for the love of monkeys, no "precious" LLM tokens required to convert DITA to Markdown!
+Template repository for publishing **Markdown** output from DITA content using the [DITA-OT GitHub Action](https://github.com/dita-ot/dita-ot-action). Every push to the repository automatically runs DITA-OT and produces a downloadable Markdown artifact — no local toolchain required.
 
 ---
 
@@ -49,12 +49,13 @@ Put all DITA content inside the `dita` directory:
 
 ```
 ├─ .github/
-│  └─ workflows/
-│     └─ ci.yml              ← CI/CD pipeline (Markdown build)
+│  ├─ workflows/
+│  │  └─ ci.yml              ← CI/CD pipeline (Markdown build)
+│  └─ dita-ot/
+│     └─ myfilter.ditaval    ← sample DITAVal filter (edit or delete)
 └─ dita/
    ├─ document.ditamap       ← main map (required by the default workflow)
    ├─ index.dita             ← first topic / landing content
-   ├─ myfilter.ditaval       ← sample DITAVal filter (edit or delete)
    ├─ *.dita                 ← your topic files
    └─ images/                ← images referenced by topics
 ```
@@ -72,6 +73,7 @@ Put all DITA content inside the `dita` directory:
 ## Build & Download (CI Workflow)
 
 Every **push to `master`** triggers the workflow defined in `.github/workflows/ci.yml`.
+It installs the [`org.lwdita`](https://github.com/jelovirt/org.lwdita) plugin and runs:
 
 ```sh
 dita -i dita/document.ditamap -o out/markdown -f markdown
@@ -83,24 +85,22 @@ The resulting Markdown files are zipped and uploaded as a **workflow artifact** 
 
 By default DITA-OT writes one Markdown file per DITA topic. The **`chunk` attribute** lets you merge topics together — this is the DITA "chunk to content" feature.
 
-**Merge all topics into a single Markdown file**
+**Merge the entire map into a single Markdown file**
 
-Add `chunk="to-content"` to the root `<map>` element in `dita/document.ditamap`:
+Add `chunk="combine"` to the root `<map>` element in `document.ditamap`:
 
 ```xml
-<map chunk="to-content">
+<map chunk="combine">
   ...
 </map>
 ```
 
-This is already set in the sample map. Remove it to get one `.md` file per topic.
+**Merge only one branch**
 
-**Merge only selected branches**
-
-Add `chunk="to-content"` to a parent `<topicref>` to fold only that branch into one file:
+Add `chunk="combine"` to a parent `<topicref>` to fold its children into the parent's file:
 
 ```xml
-<topicref href="overview.dita" chunk="to-content">
+<topicref href="overview.dita" chunk="combine">
   <topicref href="overview-details.dita"/>
   <topicref href="overview-notes.dita"/>
 </topicref>
@@ -132,7 +132,7 @@ Add profiling attributes to elements in your topics:
 
 ### Step 2 — Edit the sample DITAVal file
 
-A ready-to-edit template is at `dita/myfilter.ditaval`. Open it and set the `action` for each `<prop>` to `include` or `exclude`:
+A ready-to-edit template is at `.github/dita-ot/myfilter.ditaval`. Open it and set the `action` for each `<prop>` to `include` or `exclude`:
 
 ```xml
 <val>
@@ -150,7 +150,7 @@ build: |
   dita -i dita/document.ditamap \
        -o out/markdown \
        -f markdown \
-       --filter=dita/myfilter.ditaval
+       --filter=.github/dita-ot/myfilter.ditaval
 ```
 
 **Multiple DITAVal files**: repeat `--filter` for each file to stack filters:
@@ -185,5 +185,4 @@ Thanks to the following DITA-OT experts and maintainers:
 
 - Jason Fox
 - Roger Sheen
-- Jarno Elovirta 
-- Your cousin Claude (Anthropic)
+- Jarno Elovirta (org.lwdita plugin)
